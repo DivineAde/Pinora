@@ -1,0 +1,265 @@
+.authPage {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.authPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(17, 24, 39, 0.58), rgba(17, 24, 39, 0.58)),
+    url("/pins/pin8.jpeg") center / cover no-repeat;
+  filter: saturate(1.05);
+  transform: scale(1.02);
+}
+
+.authPage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(17, 24, 39, 0.28) 72%);
+}
+
+.authContainer {
+  position: relative;
+  z-index: 1;
+  width: min(896px, 100%);
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.88fr) minmax(390px, 1.22fr);
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.26);
+}
+
+.authArtwork {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.authArtwork::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.42), rgba(17, 24, 39, 0.12) 42%, rgba(17, 24, 39, 0.5));
+}
+
+.authArtworkImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.authBrand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 28px 24px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.authBrand img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.authPanel {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  background: #ffffff;
+}
+
+.authTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  height: 48px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: #f3f4f6;
+}
+
+.authTabs button,
+.forgotButton,
+.passwordToggle,
+.submitButton {
+  font: inherit;
+}
+
+.authTabs button {
+  border: 0;
+  border-radius: 8px;
+  color: #6b7280;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.authTabs button.active {
+  color: #111827;
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(17, 24, 39, 0.08);
+}
+
+.authPanel form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formGroup label,
+.labelRow {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.formGroup input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid #cfd7e6;
+  border-radius: 8px;
+  color: #111827;
+  background: #eaf2ff;
+  font-size: 16px;
+  outline: none;
+}
+
+.formGroup input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.14);
+}
+
+.forgotButton {
+  padding: 0;
+  border: 0;
+  color: #2563eb;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.passwordInput input {
+  padding-right: 44px;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  padding: 0;
+  border: 0;
+  color: #6d28d9;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transform: translateY(-50%);
+}
+
+.submitButton {
+  height: 50px;
+  margin-top: 2px;
+  border: 1px solid #6d28d9;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #7c3aed;
+  box-shadow: inset 0 -3px 0 #5b21b6, 0 8px 18px rgba(124, 58, 237, 0.22);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.submitButton:hover {
+  background: #6d28d9;
+}
+
+.submitButton:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  box-shadow: inset 0 -3px 0 #5b21b6;
+}
+
+.termsText {
+  margin: 14px 0 0;
+  color: #98a2b3;
+  font-size: 12px;
+  text-align: center;
+}
+
+.termsText a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.error {
+  margin: 0;
+  color: #e50829;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .authPage {
+    padding: 18px;
+  }
+
+  .authContainer {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .authArtwork {
+    min-height: 150px;
+  }
+
+  .authPanel {
+    padding: 24px 18px 28px;
+  }
+
+}

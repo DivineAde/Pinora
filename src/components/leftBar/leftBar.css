@@ -1,0 +1,56 @@
+.leftBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 76px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 16px 0;
+  border-right: 1px solid #eef0f4;
+  background: #ffffff;
+}
+
+.menuIcons,
+.menuBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.menuIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 18px;
+  color: #374151;
+  background: transparent;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.menuIcon:hover {
+  color: #5b21b6;
+  background-color: #f5f3ff;
+  transform: translateY(-1px);
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.logoutIcon {
+  color: #e11d48;
+}
+
+.logoutIcon:hover {
+  color: #be123c;
+  background-color: #fff1f2;
+}

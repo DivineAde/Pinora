@@ -1,0 +1,102 @@
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #eef0f4;
+}
+
+.topBarTitle {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+}
+
+.topBarTitle span {
+  color: #171717;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background-color: #f5f6f8;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.search:focus-within {
+  border-color: #d8c8ff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+.search img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.62;
+}
+
+.search input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #171717;
+  font-size: 16px;
+}
+
+.search input::placeholder {
+  color: #8a94a6;
+}
+
+.topBarActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topCreateButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #7c3aed;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.18);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.topCreateButton:hover {
+  background: #6d28d9;
+}
+
+@media (max-width: 720px) {
+  .topBar {
+    gap: 10px;
+  }
+
+  .topBarTitle {
+    display: none;
+  }
+
+  .topCreateButton {
+    display: none;
+  }
+}

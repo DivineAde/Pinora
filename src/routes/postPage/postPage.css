@@ -1,0 +1,287 @@
+.postPage {
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin: 28px auto 56px;
+  padding-right: 16px;
+}
+
+.postBackButton {
+  position: sticky;
+  top: 96px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  color: #111827;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.1);
+  cursor: pointer;
+}
+
+.postBackButton:hover {
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+.postContainer {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 480px) minmax(360px, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid #eef0f4;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+}
+
+.postImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 760px;
+  padding: 18px;
+  background: #f5f6f8;
+}
+
+.postImg img {
+  width: 100%;
+  max-height: 724px;
+  display: block;
+  border-radius: 20px;
+  object-fit: contain;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.1);
+}
+
+.postDetails {
+  min-width: 0;
+  min-height: 620px;
+  max-height: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.postCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postCopy h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 28px;
+  line-height: 1.14;
+  font-weight: 800;
+}
+
+.postCopy p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.postCopy a {
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  color: #6d28d9;
+  font-size: 14px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.postUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: #111827;
+  text-decoration: none;
+}
+
+.postUser img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUser div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.postUser span {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.postUser small {
+  color: #8a94a6;
+  font-size: 12px;
+}
+
+.skeletonBlock {
+  background: linear-gradient(90deg, #eceef3 25%, #f8fafc 50%, #eceef3 75%);
+  background-size: 200% 100%;
+  animation: postSkeletonLoading 1.4s infinite linear;
+}
+
+.postBackSkeleton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.postSkeletonContainer {
+  min-height: 620px;
+}
+
+.postImgSkeleton {
+  min-height: 620px;
+}
+
+.postDetailsSkeleton {
+  gap: 24px;
+}
+
+.postActionsSkeleton,
+.postUserSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.postActionsSkeleton {
+  justify-content: space-between;
+}
+
+.skeletonCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.skeletonButton {
+  width: 82px;
+  height: 42px;
+  margin-left: auto;
+  border-radius: 999px;
+}
+
+.skeletonLine {
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.skeletonTitle {
+  width: 72%;
+  height: 30px;
+}
+
+.skeletonShort {
+  width: 52%;
+}
+
+.skeletonAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.skeletonUserName {
+  width: 150px;
+}
+
+.commentSkeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+}
+
+@keyframes postSkeletonLoading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1040px) {
+  .postPage {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .postBackButton,
+  .postBackSkeleton {
+    position: static;
+  }
+
+  .postContainer {
+    grid-template-columns: minmax(260px, 420px) minmax(320px, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .postContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .postImg {
+    max-height: none;
+  }
+
+  .postImg img {
+    max-height: 70vh;
+  }
+
+  .postDetails {
+    min-height: 520px;
+    max-height: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .postPage {
+    margin-top: 18px;
+    padding: 0 10px;
+  }
+
+  .postContainer {
+    border-radius: 22px;
+  }
+
+  .postImg {
+    padding: 10px;
+  }
+
+  .postImg img {
+    border-radius: 16px;
+  }
+
+  .postDetails {
+    padding: 18px;
+  }
+
+  .postCopy h1 {
+    font-size: 23px;
+  }
+}
