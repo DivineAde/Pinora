@@ -7,6 +7,7 @@ import { useParams } from "react-router";
 import apiRequest from "../../utils/apiRequest";
 import Boards from "../../components/boards/boards";
 import FollowButton from "./FollowButton";
+import useAuthStore from "../../utils/authStore";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { MoreHorizontalIcon, Share01Icon } from "@hugeicons/core-free-icons";
 
@@ -37,6 +38,8 @@ const ProfilePage = () => {
   const [type, setType] = useState("saved");
 
   const { username } = useParams();
+  const { currentUser } = useAuthStore();
+  const isOwnProfile = currentUser?.username === username;
 
   const { isPending, error, data } = useQuery({
     queryKey: ["profile", username],
@@ -81,21 +84,23 @@ const ProfilePage = () => {
           <span></span>
           <strong>{data.followingCount}</strong> following
         </div>
-        <div className="profileInteractions">
-          <button className="profileIconButton" type="button" aria-label="Share profile">
-            <HugeiconsIcon icon={Share01Icon} size={20} />
-          </button>
-          <div className="profileButtons">
-            <button type="button">Message</button>
-            <FollowButton
-              isFollowing={data.isFollowing}
-              username={data.username}
-            />
+        {!isOwnProfile && (
+          <div className="profileInteractions">
+            <button className="profileIconButton" type="button" aria-label="Share profile">
+              <HugeiconsIcon icon={Share01Icon} size={20} />
+            </button>
+            <div className="profileButtons">
+              <button type="button">Message</button>
+              <FollowButton
+                isFollowing={data.isFollowing}
+                username={data.username}
+              />
+            </div>
+            <button className="profileIconButton" type="button" aria-label="More options">
+              <HugeiconsIcon icon={MoreHorizontalIcon} size={20} />
+            </button>
           </div>
-          <button className="profileIconButton" type="button" aria-label="More options">
-            <HugeiconsIcon icon={MoreHorizontalIcon} size={20} />
-          </button>
-        </div>
+        )}
       </section>
 
       <div className="profileOptions" role="tablist" aria-label="Profile content">
