@@ -37,6 +37,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/" element={<Homepage />} />
               <Route path="/create" element={<CreatePage />} />
               <Route path="/pin/:id" element={<PostPage />} />
+              <Route path="/profile/:username" element={<ProfilePage />} />
               <Route path="/:username" element={<ProfilePage />} />
               <Route path="/search" element={<SearchPage />} />
             </Route>
