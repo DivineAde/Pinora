@@ -63,7 +63,7 @@
   cursor: pointer;
 }
 
-.overlayIcons button img {
+.overlayIcons button svg {
   width: 20px;
   height: 20px;
 }

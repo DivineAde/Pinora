@@ -21,15 +21,16 @@ const LeftBar = () => {
   const handleLogout = async () => {
     try {
       await apiRequest.post("/users/auth/logout", {});
-      removeCurrentUser();
       toast.success("Signed out", "You have been logged out.");
-      navigate("/auth");
     } catch (err) {
       console.log(err);
       toast.error(
         "Could not log out",
-        err.response?.data?.message || "Please try again."
+        err.response?.data?.message || "Your local session has been cleared."
       );
+    } finally {
+      removeCurrentUser();
+      navigate("/auth");
     }
   };
 

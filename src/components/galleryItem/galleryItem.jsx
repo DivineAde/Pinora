@@ -1,6 +1,8 @@
 import "./galleryItem.css";
 import { Link } from "react-router";
 import Image from "../image/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { MoreHorizontalIcon, Share01Icon } from "@hugeicons/core-free-icons";
 
 const GalleryItem = ({ item }) => {
 
@@ -16,11 +18,11 @@ const GalleryItem = ({ item }) => {
       <Link to={`/pin/${item._id}`} className="overlay" />
       <button className="saveButton">Save</button>
       <div className="overlayIcons">
-        <button>
-          <Image path="/general/share.svg" alt="" />
+        <button type="button" aria-label="Share pin">
+          <HugeiconsIcon icon={Share01Icon} size={20} />
         </button>
-        <button>
-          <Image path="/general/more.svg" alt="" />
+        <button type="button" aria-label="More options">
+          <HugeiconsIcon icon={MoreHorizontalIcon} size={20} />
         </button>
       </div>
     </div>

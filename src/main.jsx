@@ -21,6 +21,9 @@ const ProfilePage = React.lazy(() =>
 );
 const SearchPage = React.lazy(() => import("./routes/searchPage/searchPage"));
 const AuthPage = React.lazy(() => import("./routes/authPage/authPage"));
+const OAuthCallbackPage = React.lazy(() =>
+  import("./routes/oauthCallbackPage/oauthCallbackPage")
+);
 
 const queryClient = new QueryClient();
 
@@ -38,6 +41,10 @@ createRoot(document.getElementById("root")).render(
               <Route path="/search" element={<SearchPage />} />
             </Route>
             <Route path="/auth" element={<AuthPage />} />
+            <Route
+              path="/auth/oauth/callback"
+              element={<OAuthCallbackPage />}
+            />
           </Routes>
         </BrowserRouter>
       </ToastProvider>

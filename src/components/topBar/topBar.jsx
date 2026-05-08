@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
-import Image from "../image/image";
 import UserButton from "../userButton/userButton";
 import "./topBar.css";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Search01Icon } from "@hugeicons/core-free-icons";
 
 const TopBar = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const TopBar = () => {
         <span>Explore</span>
       </div>
       <form onSubmit={handleSubmit} className="search">
-        <Image path="/general/search.svg" alt="" />
+        <HugeiconsIcon icon={Search01Icon} size={20} aria-hidden="true" />
         <input type="text" placeholder="Search" />
       </form>
       <div className="topBarActions">

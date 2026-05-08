@@ -1,5 +1,6 @@
-import Image from "../../components/image/image";
 import { useToast } from "../../components/toast/toast";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Cancel01Icon } from "@hugeicons/core-free-icons";
 
 const BoardForm = ({ setIsNewBoardOpen, setNewBoard }) => {
   const toast = useToast();
@@ -25,7 +26,7 @@ const BoardForm = ({ setIsNewBoardOpen, setNewBoard }) => {
           className="boardFormClose"
           onClick={() => setIsNewBoardOpen(false)}
         >
-          <Image path="/general/cancel.svg" alt="" w={20} h={20} />
+          <HugeiconsIcon icon={Cancel01Icon} size={20} />
         </div>
         <form onSubmit={handleSubmit}>
           <h1>Create a new board</h1>

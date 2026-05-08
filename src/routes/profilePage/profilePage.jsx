@@ -7,6 +7,8 @@ import { useParams } from "react-router";
 import apiRequest from "../../utils/apiRequest";
 import Boards from "../../components/boards/boards";
 import FollowButton from "./FollowButton";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { MoreHorizontalIcon, Share01Icon } from "@hugeicons/core-free-icons";
 
 const ProfileSkeleton = () => {
   return (
@@ -81,7 +83,7 @@ const ProfilePage = () => {
         </div>
         <div className="profileInteractions">
           <button className="profileIconButton" type="button" aria-label="Share profile">
-            <Image path="/general/share.svg" alt="" />
+            <HugeiconsIcon icon={Share01Icon} size={20} />
           </button>
           <div className="profileButtons">
             <button type="button">Message</button>
@@ -91,7 +93,7 @@ const ProfilePage = () => {
             />
           </div>
           <button className="profileIconButton" type="button" aria-label="More options">
-            <Image path="/general/more.svg" alt="" />
+            <HugeiconsIcon icon={MoreHorizontalIcon} size={20} />
           </button>
         </div>
       </section>

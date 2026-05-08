@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import useEditorStore from "../../utils/editorStore";
-import Image from "../image/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Delete02Icon } from "@hugeicons/core-free-icons";
 
 const Workspace = ({ previewImg }) => {
   const {
@@ -93,7 +94,7 @@ const Workspace = ({ previewImg }) => {
               className="deleteTextButton"
               onClick={() => setTextOptions({ ...textOptions, text: "" })}
             >
-              <Image path="/general/delete.svg" alt="" />
+              <HugeiconsIcon icon={Delete02Icon} size={18} />
             </div>
           </div>
         )}

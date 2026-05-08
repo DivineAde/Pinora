@@ -1,5 +1,4 @@
 import "./createPage.css";
-import IKImage from "../../components/image/image";
 import useAuthStore from "../../utils/authStore";
 import { useNavigate } from "react-router";
 import { useEffect, useRef, useState } from "react";
@@ -9,6 +8,8 @@ import apiRequest from "../../utils/apiRequest";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import BoardForm from "./BoardForm";
 import { useToast } from "../../components/toast/toast";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Edit02Icon, ImageUploadIcon } from "@hugeicons/core-free-icons";
 
 // FIXED: CHANGE DIRECT REQUEST TO MUTATION
 const addPost = async (post) => {
@@ -129,14 +130,16 @@ const CreatePage = () => {
             <div className="preview">
               <img src={previewImg.url} alt="" />
               <div className="editIcon" onClick={() => setIsEditing(true)}>
-                <IKImage path="/general/edit.svg" alt="" />
+                <HugeiconsIcon icon={Edit02Icon} size={22} />
               </div>
             </div>
           ) : (
             <>
               <label htmlFor="file" className="upload">
                 <div className="uploadTitle">
-                  <IKImage path="/general/upload.svg" alt="" />
+                  <span className="uploadIcon">
+                    <HugeiconsIcon icon={ImageUploadIcon} size={28} />
+                  </span>
                   <span>Choose a file</span>
                 </div>
                 <div className="uploadInfo">

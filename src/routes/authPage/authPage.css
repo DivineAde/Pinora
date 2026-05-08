@@ -244,6 +244,66 @@
   text-align: center;
 }
 
+.authDivider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  color: #98a2b3;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.authDivider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.authDivider span {
+  position: relative;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.googleButton {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #cfd7e6;
+  border-radius: 8px;
+  color: #111827;
+  background: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.googleButton:hover {
+  background: #f9fafb;
+}
+
+.googleButton span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #4285f4;
+  font-size: 14px;
+  font-weight: 900;
+}
+
 @media (max-width: 760px) {
   .authPage {
     padding: 18px;

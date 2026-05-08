@@ -43,10 +43,11 @@
   box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
 }
 
-.search img {
+.search svg {
   width: 20px;
   height: 20px;
   opacity: 0.62;
+  flex: 0 0 auto;
 }
 
 .search input {

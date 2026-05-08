@@ -18,8 +18,13 @@
   width: 28px;
   height: 28px;
   padding: 7px;
+  border: 0;
   border-radius: 50%;
   background: #f5f6f8;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .userOptions {

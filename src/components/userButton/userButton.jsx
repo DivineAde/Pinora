@@ -5,6 +5,8 @@ import apiRequest from "../../utils/apiRequest";
 import { Link, useNavigate } from "react-router";
 import useAuthStore from "../../utils/authStore";
 import { useToast } from "../toast/toast";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
 
 const UserButton = () => {
   const [open, setOpen] = useState(false);
@@ -38,24 +40,31 @@ const UserButton = () => {
   const handleLogout = async () => {
     try {
       await apiRequest.post("/users/auth/logout", {});
-      removeCurrentUser();
       toast.success("Signed out", "You have been logged out.");
-      navigate("/auth");
     } catch (err) {
       console.log(err);
       toast.error(
         "Could not log out",
-        err.response?.data?.message || "Please try again."
+        err.response?.data?.message || "Your local session has been cleared."
       );
+    } finally {
+      removeCurrentUser();
+      setOpen(false);
+      navigate("/auth");
     }
   };
 
   return currentUser ? (
     <div className="userButton" ref={userButtonRef}>
-      <Image path={currentUser.img || "/general/noAvatar.png"} alt="" />
-      <div onClick={() => setOpen((prev) => !prev)}>
-        <Image path="/general/arrow.svg" alt="" className="arrow" />
-      </div>
+      <Image src={currentUser.img || "/general/noAvatar.png"} alt="" />
+      <button
+        className="arrow"
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-label="Open user menu"
+      >
+        <HugeiconsIcon icon={ArrowDown01Icon} size={16} />
+      </button>
       {open && (
         <div className="userOptions">
           <Link to={`/profile/${currentUser.username}`} className="userOption">

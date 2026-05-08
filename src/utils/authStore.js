@@ -7,7 +7,10 @@ const useAuthStore = create(
     setCurrentUser: (newUser) => set({ currentUser: newUser }),
     removeCurrentUser: () => set({ currentUser: null }),
     updateCurrentUser: (updatedUser) => set({ currentUser: updatedUser }),
-  }))
+  }), {
+    name: "pinora-auth",
+    version: 1,
+  })
 );
 
 export default useAuthStore;

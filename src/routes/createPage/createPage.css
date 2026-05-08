@@ -88,10 +88,12 @@
   text-align: center;
 }
 
-.uploadTitle img {
+.uploadIcon {
   width: 36px;
   height: 36px;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);

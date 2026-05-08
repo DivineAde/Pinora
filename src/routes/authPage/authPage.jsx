@@ -18,6 +18,17 @@ const AuthPage = () => {
 
   const { setCurrentUser } = useAuthStore();
 
+  const handleGoogleLogin = () => {
+    const apiBaseUrl = import.meta.env.VITE_API_ENDPOINT?.replace(/\/$/, "");
+
+    if (!apiBaseUrl) {
+      setError("Google sign in is not configured.");
+      return;
+    }
+
+    window.location.href = `${apiBaseUrl}/users/auth/google`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -160,6 +171,19 @@ const AuthPage = () => {
             </button>
             {error && <p className="error">{error}</p>}
           </form>
+
+          <div className="authDivider">
+            <span>or</span>
+          </div>
+
+          <button
+            className="googleButton"
+            type="button"
+            onClick={handleGoogleLogin}
+          >
+            <span aria-hidden="true">G</span>
+            Continue with Google
+          </button>
 
           <p className="termsText">
             By continuing you agree to our <a href="#">Terms</a> ·{" "}
